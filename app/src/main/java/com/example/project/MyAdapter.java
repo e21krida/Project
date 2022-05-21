@@ -6,10 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter {
+    private List<Items> listOfItems;
     public MyAdapter(ArrayList<Items> listOfItems) {
-
+        this.listOfItems = listOfItems;
     }
 
     @NonNull
@@ -25,6 +27,6 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listOfItems.size();
     }
 }
