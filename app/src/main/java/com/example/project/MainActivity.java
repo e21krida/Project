@@ -11,6 +11,10 @@ import android.widget.Button;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void onPostExecute(String json){
+        Gson gson = new Gson();
+        Type type = new TypeToken<ArrayList<Items>>(){}.getType();
+        ArrayList<Items> lista = gson.fromJson(json, type);
+        listOfItems.addAll(lista);
+        adapter.notifyDataSetChanged();
     }
 }
