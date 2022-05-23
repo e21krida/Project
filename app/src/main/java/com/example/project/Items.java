@@ -2,15 +2,15 @@ package com.example.project;
 
 public class Items {
     private String ID;
-    private String Name;
-    private String Location;
-    private String Category;
+    private String name;
+    private String location;
+    private String category;
 
     public Items(String ID, String name, String location, String category) {
         this.ID = ID;
-        this.Name = name;
-        this.Location = location;
-        this.Category = category;
+        this.name = name;
+        this.location = location;
+        this.category = category;
     }
 
     public String getID() {
@@ -22,26 +22,26 @@ public class Items {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        this.Location = location;
+        this.location = location;
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(String category) {
-        this.Category = category;
+        this.category = category;
     }
 }

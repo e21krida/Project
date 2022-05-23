@@ -17,10 +17,11 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
     private RecyclerView RecyclerView;
     private MyAdapter adapter;
     private ArrayList<Items> listOfItems;
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=e21krida";
 
     private Button intentButton;
     private String TAG = "==>";
@@ -30,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView = findViewById(R.id.recycler_view);
+        new JsonTask(this).execute(JSON_URL);
+
         listOfItems = new ArrayList<Items>();
-        RecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MyAdapter(listOfItems);
+        RecyclerView = findViewById(R.id.recycler_view);
+        RecyclerView.setLayoutManager(new LinearLayoutManager(this));
         RecyclerView.setAdapter(adapter);
 
         intentButton = findViewById(R.id.mainIntent);
