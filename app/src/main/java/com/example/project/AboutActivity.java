@@ -35,6 +35,6 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void showInternalWebPage() {
-        myWebView.loadUrl("file:///android_assets/index.html");
+        myWebView.loadUrl("file:///android_asset/index.html");
     }
 }
