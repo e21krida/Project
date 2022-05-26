@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 startActivity(intent);
             }
         });
-
     }
     public void onPostExecute(String json){
         Gson gson = new Gson();
